@@ -20,6 +20,7 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowViewHolder>() {
     fun setTvshow(tvshows: List<TvShowEntitiy>) {
         listTvshow.clear()
         listTvshow.addAll(tvshows)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(
@@ -42,11 +43,11 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowViewHolder>() {
         @SuppressLint("SetTextI18n")
         fun bind(tvshow: TvShowEntitiy) {
             with(itemView) {
-                tv_item_title.text = tvshow.title
-                tv_item_date.text = tvshow.date_release
-                tv_item_score.text = tvshow.user_score.toString() + " %"
+                tv_item_title.text = tvshow.originalName
+                tv_item_date.text = tvshow.firstAirDate
+                tv_item_popularity.text = tvshow.popularity.toString()
                 Glide.with(context)
-                    .load(tvshow.poster)
+                    .load("https://image.tmdb.org/t/p/w600_and_h900_bestv2" + tvshow.posterPath)
                     .apply(
                         RequestOptions.placeholderOf(R.drawable.ic_base_image)
                             .error(R.drawable.ic_base_broken_image)
@@ -54,7 +55,7 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowViewHolder>() {
                     .into(img_poster)
                 setOnClickListener {
                     val intent = Intent(context, DetailTvshowActivity::class.java).apply {
-                        putExtra(DetailTvshowActivity.EXTRA_TVSHOW, tvshow.tvshowId)
+                        putExtra(DetailTvshowActivity.EXTRA_TVSHOW, tvshow.idTvShow)
                     }
                     context.startActivity(intent)
                 }

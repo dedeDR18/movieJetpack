@@ -37,15 +37,15 @@ class DetailMovieActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun showData(movie: MovieEntitiy) {
-        Glide.with(this)
-            .load(movie.poster)
-            .into(ivPosterMovie)
-        titlee.text = movie.title
-        dateRelease.text = movie.date_release
-        score.text = movie.user_score.toString() + " %"
-        director.text = movie.director
-        writer.text = movie.writer
-        description.text = movie.desc
-        duration.text = movie.duration
+//        Glide.with(this)
+//            .load(movie.poster)
+//            .into(ivPosterMovie)
+//        titlee.text = movie.title
+//        dateRelease.text = movie.date_release
+//        score.text = movie.user_score.toString() + " %"
+//        director.text = movie.director
+//        writer.text = movie.writer
+//        description.text = movie.desc
+//        duration.text = movie.duration
     }
 }

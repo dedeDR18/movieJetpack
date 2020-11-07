@@ -6,7 +6,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">Title</string>
     <string name="date">Date Release</string>
-    <string name="score">User Score</string>
+    <string name="popularity">Popularity</string>
     <string name="image_poster_desc">Image Poster</string>
     <string name="movie_title">Judul Film</string>
     <string name="movie_date_release">Informasi Rilisan</string>

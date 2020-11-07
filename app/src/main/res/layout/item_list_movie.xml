@@ -49,7 +49,7 @@
             tools:text="@string/title" />
 
         <TextView
-            android:id="@+id/tv_item_score"
+            android:id="@+id/tv_item_popularity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
@@ -60,7 +60,7 @@
             app:layout_constraintEnd_toEndOf="@+id/tv_item_date"
             app:layout_constraintStart_toStartOf="@+id/tv_item_date"
             app:layout_constraintTop_toBottomOf="@+id/tv_item_date"
-            tools:text="@string/score" />
+            tools:text="@string/popularity" />
 
         <TextView
             android:id="@+id/tv_item_date"

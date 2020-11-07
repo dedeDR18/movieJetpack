@@ -1,13 +1,15 @@
 package id.learn.android.moviecatalogue.data
 
+import com.google.gson.annotations.SerializedName
+
 data class TvShowEntitiy(
-    var tvshowId: Int,
-    var poster: Int,
-    var title: String,
-    var desc: String,
-    var date_release: String,
-    var user_score: Int,
-    var duration: String,
-    var kreator: String
+    var idTvShow: Long? = null,
+    var popularity: Float? = null,
+    var originalLanguage: String? = null,
+    var originalName: String? = null,
+    var posterPath: String? = null,
+    var overview: String? = null,
+    var firstAirDate: String? = null,
+    var voteAvarage: Float? = null
 )
 

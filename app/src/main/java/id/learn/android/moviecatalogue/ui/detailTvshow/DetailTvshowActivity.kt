@@ -39,18 +39,18 @@ class DetailTvshowActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun showData(tvshow: TvShowEntitiy) {
-        Glide.with(this)
-            .load(tvshow.poster)
-            .apply(
-                RequestOptions.placeholderOf(R.drawable.ic_base_image)
-                    .error(R.drawable.ic_base_broken_image)
-            )
-            .into(ivPoster)
-        titleTvshow.text = tvshow.title
-        dateReleaseTvshow.text = tvshow.date_release
-        scoreTvshow.text = tvshow.user_score.toString() + " %"
-        kreator.text = tvshow.kreator
-        descriptionTvshow.text = tvshow.desc
-        durationTVshow.text = tvshow.duration
+//        Glide.with(this)
+//            .load(tvshow.poster)
+//            .apply(
+//                RequestOptions.placeholderOf(R.drawable.ic_base_image)
+//                    .error(R.drawable.ic_base_broken_image)
+//            )
+//            .into(ivPoster)
+//        titleTvshow.text = tvshow.title
+//        dateReleaseTvshow.text = tvshow.date_release
+//        scoreTvshow.text = tvshow.user_score.toString() + " %"
+//        kreator.text = tvshow.kreator
+//        descriptionTvshow.text = tvshow.desc
+//        durationTVshow.text = tvshow.duration
     }
 }
