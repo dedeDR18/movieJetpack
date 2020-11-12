@@ -28,8 +28,10 @@ class MovieFragment : Fragment() {
             val vm = ViewModelProvider(this, vmFactory)[MovieViewModel::class.java]
             val movieAdapter = MovieAdapter()
 
+            pgMovieFragment.visibility = View.VISIBLE
             vm.getMovies().observe(requireActivity(), Observer {movies ->
                 movieAdapter.setMovies(movies)
+                pgMovieFragment.visibility = View.GONE
             })
 
 

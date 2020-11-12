@@ -9,20 +9,8 @@ import id.learn.android.moviecatalogue.data.source.remote.RemoteDataSource
 import id.learn.android.moviecatalogue.data.source.remote.response.MovieItem
 import id.learn.android.moviecatalogue.data.source.remote.response.TvShowItem
 
-class TmdbRepository private constructor(private val remoteDataSource: RemoteDataSource) :
+class FakeTmdbRepository(private val remoteDataSource: RemoteDataSource) :
     TmdbDataSource {
-
-    companion object {
-        @Volatile
-        private var instance: TmdbRepository? = null
-
-        fun getInstance(remoteData: RemoteDataSource): TmdbRepository =
-            instance ?: synchronized(this) {
-                instance ?: TmdbRepository(remoteData)
-            }
-    }
-
-
 
     override fun getAllMovie(): LiveData<List<MovieEntitiy>> {
         val movieResult = MutableLiveData<List<MovieEntitiy>>()
@@ -42,7 +30,6 @@ class TmdbRepository private constructor(private val remoteDataSource: RemoteDat
                     )
                     movieList.add(movie)
                 }
-                Log.d("TEST", "GETMOVIE")
                 movieResult.postValue(movieList)
             }
         })
@@ -67,50 +54,65 @@ class TmdbRepository private constructor(private val remoteDataSource: RemoteDat
                     )
                     tvshowList.add(tvshow)
                 }
-                Log.d("TEST", "GETTVSHOW")
                 tvshowResult.postValue(tvshowList)
             }
         })
         return tvshowResult
     }
 
-    override fun getMovieDetail(idMovie: Long, apiKey: String, language: String): LiveData<MovieEntitiy> {
+    override fun getMovieDetail(
+        idMovie: Long,
+        apiKey: String,
+        language: String
+    ): LiveData<MovieEntitiy> {
         val dataMovie = MutableLiveData<MovieEntitiy>()
-        remoteDataSource.getDetailMovie(idMovie, apiKey, language, object :RemoteDataSource.LoadMovieDetailCallback{
-            override fun onDetailMovieCallback(movie: MovieItem) {
-                val m = MovieEntitiy(
-                    movie.idMovie,
-                    movie.popularity,
-                    movie.originalTitle,
-                    movie.originalLanguage,
-                    movie.posterPath,
-                    movie.releaseDate,
-                    movie.overview,
-                    movie.voteAvarage,
-                )
-                dataMovie.postValue(m)
-            }
-        })
+        remoteDataSource.getDetailMovie(
+            idMovie,
+            apiKey,
+            language,
+            object : RemoteDataSource.LoadMovieDetailCallback {
+                override fun onDetailMovieCallback(movie: MovieItem) {
+                    val m = MovieEntitiy(
+                        movie.idMovie,
+                        movie.popularity,
+                        movie.originalTitle,
+                        movie.originalLanguage,
+                        movie.posterPath,
+                        movie.releaseDate,
+                        movie.overview,
+                        movie.voteAvarage,
+                    )
+                    dataMovie.postValue(m)
+                }
+            })
         return dataMovie
     }
 
-    override fun getTvshowDetail(idTvshow: Long, apiKey: String, language: String): LiveData<TvShowEntitiy> {
+    override fun getTvshowDetail(
+        idTvshow: Long,
+        apiKey: String,
+        language: String
+    ): LiveData<TvShowEntitiy> {
         val dataTvshow = MutableLiveData<TvShowEntitiy>()
-        remoteDataSource.getDetailTvshow(idTvshow, apiKey, language, object : RemoteDataSource.LoadTvshowDetailCallback{
-            override fun onDetailTvshowCallback(tvshow: TvShowItem) {
-                val t = TvShowEntitiy(
-                    tvshow.idTvShow,
-                    tvshow.popularity,
-                    tvshow.originalLanguage,
-                    tvshow.originalName,
-                    tvshow.posterPath,
-                    tvshow.overview,
-                    tvshow.firstAirDate,
-                    tvshow.voteAvarage
-                )
-                dataTvshow.postValue(t)
-            }
-        })
+        remoteDataSource.getDetailTvshow(
+            idTvshow,
+            apiKey,
+            language,
+            object : RemoteDataSource.LoadTvshowDetailCallback {
+                override fun onDetailTvshowCallback(tvshow: TvShowItem) {
+                    val t = TvShowEntitiy(
+                        tvshow.idTvShow,
+                        tvshow.popularity,
+                        tvshow.originalLanguage,
+                        tvshow.originalName,
+                        tvshow.posterPath,
+                        tvshow.overview,
+                        tvshow.firstAirDate,
+                        tvshow.voteAvarage
+                    )
+                    dataTvshow.postValue(t)
+                }
+            })
         return dataTvshow
     }
 }

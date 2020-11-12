@@ -10,4 +10,8 @@ interface TmdbDataSource {
     fun getAllMovie(): LiveData<List<MovieEntitiy>>
 
     fun getAllTvshow(): LiveData<List<TvShowEntitiy>>
+
+    fun getMovieDetail(idMovie: Long, apiKey: String, language: String): LiveData<MovieEntitiy>
+
+    fun getTvshowDetail(idTvshow: Long, apiKey: String, language: String): LiveData<TvShowEntitiy>
 }

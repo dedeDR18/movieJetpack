@@ -29,8 +29,10 @@ class TvShowFragment : Fragment() {
             Log.d("TEST", "TVSHOW")
             val tvshowAdapter = TvShowAdapter()
 
+            pgTvshowFragment.visibility = View.VISIBLE
             vm.getTvShows().observe(requireActivity(), Observer {
                 tvshowAdapter.setTvshow(it)
+                pgTvshowFragment.visibility = View.GONE
             })
 
             with(rv_tvshow) {

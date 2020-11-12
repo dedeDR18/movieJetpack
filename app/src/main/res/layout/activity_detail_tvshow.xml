@@ -12,6 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ProgressBar
+            android:id="@+id/pgTvshow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/ivPoster"
             android:layout_width="150dp"
@@ -77,7 +87,7 @@
             app:layout_constraintTop_toBottomOf="@+id/dateReleaseTvshow" />
 
         <TextView
-            android:id="@+id/scoreTvshow"
+            android:id="@+id/voteTvshow"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -85,53 +95,52 @@
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/ivPoster"
             app:layout_constraintTop_toBottomOf="@+id/tvScore"
-            tools:text="100 %" />
+            tools:text="5.0" />
 
         <TextView
-            android:id="@+id/tvDurationTvshow"
+            android:id="@+id/tvLanguageTvshow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="45dp"
             android:layout_marginTop="16dp"
-            android:text="@string/tvshow_duration"
+            android:text="@string/tvshow_language"
             app:layout_constraintStart_toEndOf="@+id/tvScore"
             app:layout_constraintTop_toBottomOf="@+id/dateReleaseTvshow" />
 
         <TextView
-            android:id="@+id/durationTVshow"
+            android:id="@+id/languageTvshow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/scoreTvshow"
-            app:layout_constraintTop_toBottomOf="@+id/tvDurationTvshow"
-            tools:text="20h 45m" />
+            app:layout_constraintStart_toEndOf="@+id/voteTvshow"
+            app:layout_constraintTop_toBottomOf="@+id/tvLanguageTvshow"
+            tools:text="en" />
 
         <TextView
-            android:id="@+id/tvDirector"
+            android:id="@+id/tvPopularity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@string/tvshow_creator"
+            android:text="@string/tvshow_popularity"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivPoster" />
 
         <TextView
-            android:id="@+id/kreator"
+            android:id="@+id/popularity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDirector"
-            tools:text="Joe &amp; Anthony Russo" />
+            app:layout_constraintTop_toBottomOf="@+id/tvPopularity"
+            tools:text="123.123" />
 
 
         <TextView
-            android:id="@+id/tvDesc"
+            android:id="@+id/tvOverview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -139,24 +148,18 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/kreator" />
+            app:layout_constraintTop_toBottomOf="@+id/popularity" />
 
         <TextView
-            android:id="@+id/descriptionTvshow"
+            android:id="@+id/overviewTvshow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDesc"
+            app:layout_constraintTop_toBottomOf="@+id/tvOverview"
             tools:text="Setelah akselerator partikel menyebabkan badai aneh, Penyelidik CSI Barry Allen disambar petir dan jatuh koma. Beberapa bulan kemudian dia terbangun dengan kekuatan kecepatan super, memberinya kemampuan untuk bergerak melalui Central City seperti malaikat penjaga yang tak terlihat. Meskipun awalnya senang dengan kekuatan barunya, Barry terkejut menemukan bahwa dia bukan satu-satunya manusia meta yang diciptakan setelah ledakan akselerator - dan tidak semua orang menggunakan kekuatan baru mereka untuk kebaikan. Barry bermitra dengan S.T.A.R. Lab dan mendedikasikan hidupnya untuk melindungi yang tidak bersalah. Untuk saat ini, hanya beberapa teman dekat dan rekan yang tahu bahwa Barry secara harfiah adalah manusia tercepat, tetapi tidak lama sebelum dunia mengetahui apa yang menjadi Barry Allen ... The Flash" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="190dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

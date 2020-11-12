@@ -19,11 +19,12 @@ class ApiClient {
 
     fun getRetrofit(): Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/discover/")
+            .baseUrl("https://api.themoviedb.org/3/")
             .client(getInterceptor())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
 
 
 }

@@ -12,6 +12,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ProgressBar
+        android:id="@+id/pgMovie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/ivPosterMovie"
         android:layout_width="150dp"
@@ -22,15 +32,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:text="@string/movie_title"
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/movie_title"
         app:layout_constraintStart_toEndOf="@+id/ivPosterMovie"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/titlee"
@@ -45,15 +54,14 @@
         tools:text="Avengers : Infinity War" />
 
     <TextView
-        android:text="@string/movie_date_release"
         android:id="@+id/tvDateRelease"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/movie_date_release"
         app:layout_constraintStart_toEndOf="@+id/ivPosterMovie"
-        app:layout_constraintTop_toBottomOf="@+id/titlee"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/titlee" />
 
     <TextView
         android:id="@+id/dateRelease"
@@ -68,122 +76,91 @@
         tools:text="18/12/1995" />
 
     <TextView
-        android:text="@string/movie_user_score"
-        android:id="@+id/tvScore"
+        android:id="@+id/tvVote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/movie_vote_avarage"
         app:layout_constraintStart_toEndOf="@+id/ivPosterMovie"
-        app:layout_constraintTop_toBottomOf="@+id/dateRelease"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/dateRelease" />
 
     <TextView
-        android:id="@+id/score"
+        android:id="@+id/tvPopulartity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Popularitas"
+        app:layout_constraintStart_toEndOf="@+id/ivPosterMovie"
+        app:layout_constraintTop_toBottomOf="@+id/vote" />
+
+    <TextView
+        android:id="@+id/popularity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivPosterMovie"
+        app:layout_constraintTop_toBottomOf="@+id/tvPopulartity"
+        tools:text="4.8" />
+
+    <TextView
+        android:id="@+id/vote"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/ivPosterMovie"
-        app:layout_constraintTop_toBottomOf="@+id/tvScore"
-        tools:text="100 %" />
+        app:layout_constraintTop_toBottomOf="@+id/tvVote"
+        tools:text="4.8" />
 
     <TextView
-        android:id="@+id/tvDuration"
+        android:id="@+id/tvLanguage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/movie_duration"
-        app:layout_constraintStart_toEndOf="@+id/tvScore"
-        app:layout_constraintTop_toBottomOf="@+id/dateRelease"
-        />
+        android:layout_marginTop="8dp"
+        android:text="@string/movie_language"
+        app:layout_constraintStart_toEndOf="@+id/tvVote"
+        app:layout_constraintTop_toBottomOf="@+id/dateRelease" />
 
     <TextView
-        android:id="@+id/duration"
+        android:id="@+id/language"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/score"
-        app:layout_constraintTop_toBottomOf="@+id/tvDuration"
-        tools:text="20h 45m" />
+        app:layout_constraintStart_toEndOf="@+id/vote"
+        app:layout_constraintTop_toBottomOf="@+id/tvLanguage"
+        tools:text="en" />
+
 
     <TextView
-        android:text="@string/movie_director"
-        android:id="@+id/tvDirector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivPosterMovie"
-        />
-
-    <TextView
-        android:id="@+id/director"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDirector"
-        tools:text="Joe &amp; Anthony Russo" />
-
-    <TextView
-        android:text="@string/movie_writer"
-        android:id="@+id/tvWriter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/ivPosterMovie"
-        />
-
-    <TextView
-        android:id="@+id/writer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/tvWriter"
-        tools:text="Joe &amp; Anthony Russo" />
-
-    <TextView
-        android:text="@string/movie_description"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:id="@+id/tvDesc"
+        android:id="@+id/tvOverview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:text="@string/movie_description"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/director"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/ivPosterMovie" />
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/overview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDesc"
+        app:layout_constraintTop_toBottomOf="@+id/tvOverview"
         tools:text="Setelah akselerator partikel menyebabkan badai aneh, Penyelidik CSI Barry Allen disambar petir dan jatuh koma. Beberapa bulan kemudian dia terbangun dengan kekuatan kecepatan super, memberinya kemampuan untuk bergerak melalui Central City seperti malaikat penjaga yang tak terlihat. Meskipun awalnya senang dengan kekuatan barunya, Barry terkejut menemukan bahwa dia bukan satu-satunya manusia meta yang diciptakan setelah ledakan akselerator - dan tidak semua orang menggunakan kekuatan baru mereka untuk kebaikan. Barry bermitra dengan S.T.A.R. Lab dan mendedikasikan hidupnya untuk melindungi yang tidak bersalah. Untuk saat ini, hanya beberapa teman dekat dan rekan yang tahu bahwa Barry secara harfiah adalah manusia tercepat, tetapi tidak lama sebelum dunia mengetahui apa yang menjadi Barry Allen ... The Flash" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="190dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
